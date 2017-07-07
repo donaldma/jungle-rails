@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @email = User.find_by_email(params[:email])
   end
 
   def create
