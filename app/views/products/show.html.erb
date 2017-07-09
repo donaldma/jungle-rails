@@ -22,10 +22,17 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <br>
+          <dd>
+          <%= link_to add_item_cart_path(product_id: @product.id), class: 'btn btn-primary', method: :put do %>
+            <%= fa_icon "shopping-cart", text: 'Add' %>
+          <% end %>
+          </dd>
         </dl>
 
+
         <% if current_user %>
-          <%= form_for [@product, @review] do |f| %>
+          <%= bootstrap_form_for [@product, @review] do |f| %>
             <% if f.object.errors.any? %>
               <div class="alert alert-danger">
                 <strong>The following errors prevented saving:</strong>
@@ -37,14 +44,13 @@
               </div>
             <% end %>
             <div class="row">
-              <%= f.label :description %><br>
               <%= f.text_area :description %>
             </div>
             <div class="row">
-              <%= fa_icon 'star', text: 'Rating' %>
-              <%= f.select :rating, options_for_select(1..5) %>
+              <%= f.select :rating , options_for_select(1..5) %>
               <%= f.submit 'Submit'%>
             </div>
+            <br>
           <% end %>
         <% end %>
 
@@ -55,13 +61,16 @@
             <% @product.reviews.order(created_at: :desc).each do |review| %>
               <dt>User: </dt>
               <dd><%= review.user.name %></dd>
+              <br>
               <dt>Description: </dt>
               <dd><%= review.description %></dd>
+              <br>              
               <dt>Rating: </dt>
               <dd><%= review.rating %></dd>
+              <br>
               <% if current_user %>
                 <% if current_user.id === review.user_id %>
-                  <%= link_to fa_icon('trash'), product_review_path(@product.id, review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+                  <%= link_to 'Delete Review', product_review_path(@product.id, review.id), class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
                 <% end %>
               <% end %>
               <hr>

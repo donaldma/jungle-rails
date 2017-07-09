@@ -1,9 +1,10 @@
 <section class="cart-show">
 
   <% if cart.size === 0 %>
-    
-    <h1>Your Shopping Cart is empty.</h1>
-    <p>Continue shopping on the <%= link_to 'Jungle homepage', :root %>
+    <header class="page-header">
+      <h1>Your Shopping Cart is empty.</h1>
+    </header>
+    <p>Continue shopping on the <%= link_to 'Jungle homepage', :root %>    
 
   <% else %>
     <header class="page-header">

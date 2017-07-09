@@ -1,10 +1,9 @@
 <tr>
   <td>
-    <h4><%= category.name %></h4>
-  </td>
-  <td>
+    <h4><%= category.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <% if category.products.count === 0 %>
       <%= link_to fa_icon('trash'), [:admin, category], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
+    </h4> 
   </td>
 </tr>
