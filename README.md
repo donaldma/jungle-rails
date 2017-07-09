@@ -2,6 +2,20 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Screenshots
+
+![Homepage](https://github.com/donaldma/jungle-rails/blob/master/docs/soldout.png)
+![Admin Categories](https://github.com/donaldma/jungle-rails/blob/master/docs/admin%20categories.png)
+![Admin add Categories](https://github.com/donaldma/jungle-rails/blob/master/docs/admin%20new%20cat.png)
+![Signup](https://github.com/donaldma/jungle-rails/blob/master/docs/signup.png)
+![Login](https://github.com/donaldma/jungle-rails/blob/master/docs/login.png)
+![Order Details](https://github.com/donaldma/jungle-rails/blob/master/docs/order%20details.png)
+![Email](https://github.com/donaldma/jungle-rails/blob/master/docs/mail.png)
+![Admin Auth](https://github.com/donaldma/jungle-rails/blob/master/docs/admin%20auth.png)
+![Filled Cart](https://github.com/donaldma/jungle-rails/blob/master/docs/full%20cart.png)
+![Empty Cart](https://github.com/donaldma/jungle-rails/blob/master/docs/empty%20cart.png)
+![Logged out Reviews](https://github.com/donaldma/jungle-rails/blob/master/docs/reviews:logged-out.png)
+![Logged in Reviews](https://github.com/donaldma/jungle-rails/blob/master/docs/reviews:logged-in.png)
 
 ## Setup
 
