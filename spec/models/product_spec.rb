@@ -3,32 +3,32 @@ require 'rails_helper'
 RSpec.describe Product, type: :model do
   before(:each) do
     @category = Category.new(name: 'furniture')
-    @product = Product.new(name: 'big comfy couch', price: 1000000, quantity: 2, category: @category)
+    @product = Product.new(name: 'big comfy couch', price_cents: 1000000, quantity: 2, category: @category)
   end
 
   describe 'Validations' do
     it 'should save a valid product' do
-      expect(@product).to (be_valid)
+      @product.save
     end
 
     it 'should not save without valid name' do
-      @name = Product.new(name: nil)
-      expect(@name).to_not (be_valid)
+      @product.name = nil
+      expect(@product.valid?).to be false 
     end
 
     it 'should not save without valid price' do
-      @price = Product.new(price: nil)
-      expect(@price).to_not (be_valid)
+      @product.price_cents = nil
+      expect(@product.valid?).to be false
     end
 
     it 'should not save without valid quantity' do
-      @quantity = Product.new(quantity: nil)
-      expect(@quantity).to_not (be_valid)
+      @product.quantity = nil
+      expect(@product.valid?).to be false
     end
 
-    it 'should not save without valid category id' do
-      @category = Product.new(category: nil)
-      expect(@category).to_not (be_valid)
+    it 'should not save without valid category' do
+      @product.category = nil
+      expect(@product.valid?).to be false
     end
   end
 end
