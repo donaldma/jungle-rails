@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
     
     it 'should have authenticated email and password' do
       @user.save
-      expect(User.authenticate_with_credentials('joel@joel.joel', 'hello')).to_not eql(nil)
+      expect(User.authenticate_with_credentials(' joel@joel.joel', 'hello')).to_not eql(nil)
     end
   end
 end
